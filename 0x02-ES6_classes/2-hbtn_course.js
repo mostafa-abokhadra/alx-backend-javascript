@@ -1,49 +1,46 @@
 export default class HolbertonCourse {
     constructor(name, length, students){
-        if (typeof(name) === String) {
-            this._name = name;
-        } else {
+        // if (typeof name !== String) {
+        //     throw new TypeError("Name must be a string");
+        // }
+        // if (typeof length !== Number){
+        //     throw new TypeError("Length must be a number");
+        // }
+        // if (students instanceof Array){
+        //     this._students = students;
+        // } else {
+        //     throw new TypeError("Students must be an array");
+        // }
+        this._name = name;
+        this._length = length;
+        this._students = students;
+    }
+    set name(name){
+        if (typeof name !== 'string') {
             throw new TypeError("Name must be a string");
         }
-        if (typeof(length) === Number) {
-            this._length = length;
-        } else {
+        this._name = name
+    }
+    set length(length){
+        if (typeof length !== 'number') {
             throw new TypeError("Length must be a number");
         }
+        this._length = length;
+    }
+    set students(students){
         if (students instanceof Array){
             this._students = students;
         } else {
             throw new TypeError("Students must be an array");
         }
     }
-    setName(name){
-        if (typeof(name) === String) {
-            this._name = name;
-        } else {
-            throw new TypeError("Name must be a string");
-        }
-    }
-    setLength(length){
-        if (typeof(length) === Number) {
-            this._length = length;
-        } else {
-            throw new TypeError("Length must be a number");
-        }
-    }
-    setStudents(students){
-        if (students instanceof Array){
-            this._students = students;
-        } else {
-            throw new TypeError("Students must be an array");
-        }
-    }
-    getName(){
+    get name(){
         return this._name;
     }
-    getLength(){
+    get length(){
         return this._length;
     }
-    getStudents(){
+    get students(){
         return this._students;
     }
 }
