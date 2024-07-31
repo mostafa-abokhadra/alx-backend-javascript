@@ -11,6 +11,7 @@ export default function updateStudentGradeByCity(arr, city, newGrades) {
   });
   return filtered.map((obj) => {
     if (graded.find((current) => current.id === obj.id) === undefined) {
+      // eslint-disable-next-line no-param-reassign
       obj.grade = 'N/A';
     }
     return obj;
