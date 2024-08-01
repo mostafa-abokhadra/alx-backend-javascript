@@ -4,6 +4,7 @@ interface Teacher {
     fullTimeEmployee: boolean,
     location: string,
     yearsOfExperience?: number
+    [key: string | number]: any
 }
 interface Directors extends Teacher {
     numberOfReports: number
@@ -14,13 +15,19 @@ interface printTeacherFunction {
 function printTeacher(firstName: string, lastName: string) {
     return `${firstName[0]}. ${lastName}`;
 }
-
-const teacher3: Teacher = {
-    firstName: 'John',
-    fullTimeEmployee: false,
-    lastName: 'Doe',
-    location: 'London',
-    contract: false,
-  };
-  
-  console.log(teacher3);
+interface studentInterface {
+    firstName: string,
+    lastName: string
+}
+class StudentClass implements studentInterface{
+    firstName: string;
+    lastName: string;
+    constructor(firstName: string, lastName: string){
+    }
+    workOnHomework(): string {
+        return `Currently working`;
+    }
+    displayName(): string {
+        return `${this.firstName}`
+    }
+}
