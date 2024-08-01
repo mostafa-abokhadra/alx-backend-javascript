@@ -41,3 +41,11 @@ function createEmployee (salary: number | string): Director | Teacher {
     }
     return new Director();
 }
+
+type Subjects = "Math" | "History";
+function teachClass(todayClass: Subjects): string {
+    if (todayClass === "Math") {
+        return `Teaching Math`;
+    }
+    return `Teaching History`;
+} 
